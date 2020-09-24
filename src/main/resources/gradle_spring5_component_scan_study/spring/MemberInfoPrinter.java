@@ -2,7 +2,9 @@ package gradle_spring5_component_scan_study.spring;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component("infoPrinter")
 public class MemberInfoPrinter {
     private MemberDao memberDao;
     private MemberPrinter printer;
