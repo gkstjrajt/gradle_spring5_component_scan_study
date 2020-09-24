@@ -8,6 +8,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import gradle_spring5_component_scan_study.config.AppCtx;
+import gradle_spring5_component_scan_study.config.AppCtxWithExclude;
 import gradle_spring5_component_scan_study.spring.ChangePasswordService;
 import gradle_spring5_component_scan_study.spring.DuplicateMemberException;
 import gradle_spring5_component_scan_study.spring.MemberInfoPrinter;
@@ -21,7 +22,7 @@ public class MainForSpring {
     private static ApplicationContext ctx = null;
 
     public static void main(String[] args) throws IOException {
-        ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+        ctx = new AnnotationConfigApplicationContext(AppCtxWithExclude.class);
         try (BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
             while (true) {
                 System.out.println("명령어를 입력하세요:");

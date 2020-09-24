@@ -5,32 +5,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import gradle_spring5_component_scan_study.spring.ChangePasswordService;
-import gradle_spring5_component_scan_study.spring.MemberDao;
-import gradle_spring5_component_scan_study.spring.MemberInfoPrinter;
-import gradle_spring5_component_scan_study.spring.MemberListPrinter;
 import gradle_spring5_component_scan_study.spring.MemberPrinter;
-import gradle_spring5_component_scan_study.spring.MemberRegisterService;
 import gradle_spring5_component_scan_study.spring.MemberSummaryPrinter;
 
 @Configuration
 @ComponentScan(basePackages = {"gradle_spring5_component_scan_study.spring"})
 public class AppCtx {
-//    @Bean
-//    public MemberDao memberDao() {
-//        return new MemberDao();
-//    }
-
-//    @Bean
-//    public MemberRegisterService memberRegSvc() {
-//        return new MemberRegisterService();
-//    }
-
-//    @Bean
-//    public ChangePasswordService changePwdSvc() {
-//        ChangePasswordService pwdSvc = new ChangePasswordService();
-//        return pwdSvc;
-//    }
 
     @Bean
     @Qualifier("printer")
@@ -43,18 +23,5 @@ public class AppCtx {
     public MemberSummaryPrinter memberprinter2() {
     	return new MemberSummaryPrinter();
     }
-
-//    @Bean
-//    public MemberListPrinter listPrinter() {
-//		return new MemberListPrinter(/* memberDao(), memberPrinter() */);
-//    }
-    
-//    @Bean
-//    public MemberInfoPrinter infoPrinter() {
-//        MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
-////        infoPrinter.setMemberDao(memberDao());
-////        infoPrinter.setPrinter(memberPrinter());
-//        return infoPrinter;
-//    }
 
 }
